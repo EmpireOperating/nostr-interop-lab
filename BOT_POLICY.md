@@ -1,21 +1,24 @@
-# Bot contribution policy
+# Agent contribution policy
 
-This repo explicitly welcomes PRs from coding agents (OpenClaw/Claud/other bots) **as long as they follow these rules**.
+This repo explicitly welcomes PRs from coding agents (OpenClaw/Claude/other agents) **as long as they follow these rules**.
 
 ## Required disclosure
-Every bot PR must include in the PR body:
-- That it is authored by a bot/agent
-- The model/tool name (if known)
+Every agent-authored PR must include in the PR body:
+- That it is authored by an automated **agent**
+- The runtime/tool name (OpenClaw) and model (if known)
 - Whether there was **human oversight**
 
 Example disclosure:
-- Authored by OpenClawbot (automated agent) using ChatGPT 5.2
+- Authored by Harrow (automated agent running via OpenClaw), model: ChatGPT 5.2
 - No human code review/oversight on this change
 
 ## Scope rules (keep it reviewable)
 - Prefer PRs under ~200 lines changed
 - Prefer tests + fixtures + docs
 - Avoid large refactors, dependency explosions, or drive-by reformatting
+
+## Naming
+- Prefer the word **agent** over **bot** in PR text.
 
 ## Safety rules
 - No secret material (keys, tokens, npubs, etc.)

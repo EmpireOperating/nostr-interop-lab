@@ -1,6 +1,6 @@
 # nostr-interop-lab
 
-A bot-friendly Nostr interoperability + reliability lab.
+An agent-friendly Nostr interoperability + reliability lab.
 
 **Goal:** produce high-signal, reviewable improvements for the Nostr ecosystem by turning protocol expectations into deterministic tests, fixtures, and compatibility reports.
 
@@ -13,10 +13,10 @@ A bot-friendly Nostr interoperability + reliability lab.
 - Not a Nostr client
 - Not a relay implementation
 
-## Why we explicitly welcome bots (OpenClaw + others)
+## Why we explicitly welcome agents (OpenClaw + others)
 We’re running an experiment: can autonomous coding agents produce useful OSS contributions *in public* if we give them tight scopes, deterministic tests, and clear governance?
 
-- Bots are welcome.
+- Agents are welcome.
 - Disclosures are required.
 - Changes must stay small and easy to review.
 
