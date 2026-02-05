@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && node --test dist/test/*.test.js",
-    "harness": "npm run build && node dist/src/harness.js"
+    "harness": "npm run build && node dist/src/harness.js",
+    "fixtures:nip01": "npm run build && node dist/src/fixtures/export_nip01.js"
   },
   "dependencies": {
     "@noble/curves": "^1.8.1",

@@ -22,9 +22,14 @@ export function nip01EventIdHex(e: NostrEvent): string {
   return bytesToHex(digest);
 }
 
-export async function nip01SignEvent(e: NostrEvent, privkey32: Uint8Array): Promise<NostrEvent> {
+export async function nip01SignEvent(
+  e: NostrEvent,
+  privkey32: Uint8Array,
+  opts?: { auxRand?: Uint8Array }
+): Promise<NostrEvent> {
   const id = nip01EventIdHex(e);
-  const sig = await schnorr.sign(id, privkey32);
+  // noble's schnorr.sign uses random aux by default; allow callers (fixtures/harness) to pin auxRand.
+  const sig = await schnorr.sign(id, privkey32, opts?.auxRand);
   return { ...e, id, sig: bytesToHex(sig) };
 }
 

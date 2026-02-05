@@ -1,0 +1,86 @@
+[
+  {
+    "name": "nip01-kind1-minimal",
+    "privkey": "0000000000000000000000000000000000000000000000000000000000000001",
+    "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+    "event": {
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "created_at": 1,
+      "kind": 1,
+      "tags": [],
+      "content": "hello nostr"
+    },
+    "expected": {
+      "id": "090cb4595c9fa1b6482d9cc55d007007571dbb65f7c929244fc4dae3bf803e43",
+      "sig": "6b84b5fbce96901501e3225f9df3e74257843329f723ea2b9e3620bd5a6495eb4a206251ad3bb82f09865cb7d910bbec90031337d2778a8dcd1b68d95ddefe76"
+    }
+  },
+  {
+    "name": "nip01-kind1-with-tags",
+    "privkey": "0000000000000000000000000000000000000000000000000000000000000001",
+    "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+    "event": {
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "created_at": 2,
+      "kind": 1,
+      "tags": [
+        [
+          "p",
+          "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        ],
+        [
+          "e",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "wss://example.com",
+          "root"
+        ]
+      ],
+      "content": "hello tags"
+    },
+    "expected": {
+      "id": "19a7f43896f7d59daf303dd646ef9c9a4e1a97931fd095fb0407e0138b69056c",
+      "sig": "bd14ade31ba956d0b246639ecc5346d818dedc270352ca0c29ff1c701f03a07aae819cbae7f83b45be20eea6b48b33514444e4cb651dd5715a6b49421cea633a"
+    }
+  },
+  {
+    "name": "nip01-kind0-metadata-minimal",
+    "privkey": "0000000000000000000000000000000000000000000000000000000000000001",
+    "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+    "event": {
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "created_at": 3,
+      "kind": 0,
+      "tags": [],
+      "content": "{\"name\":\"alice\",\"about\":\"hello\",\"picture\":\"https://example.com/p.png\"}"
+    },
+    "expected": {
+      "id": "87953487af94c359e847fcae6c00297ec6a5789ce2ac744ededc2e8e49dfd593",
+      "sig": "447859347132c64c3a8c817e8037857891a27e6bba7dea375764083bff622719aea2c7c655baa77ac548fced9dc77082ecf6290cc43109af869531d0baff6dc4"
+    }
+  },
+  {
+    "name": "nip01-kind7-reaction-like",
+    "privkey": "0000000000000000000000000000000000000000000000000000000000000001",
+    "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+    "event": {
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "created_at": 4,
+      "kind": 7,
+      "tags": [
+        [
+          "e",
+          "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        ],
+        [
+          "p",
+          "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        ]
+      ],
+      "content": "+"
+    },
+    "expected": {
+      "id": "b9785108cbc7fa64c32ba789aaaa7e681d88e008dd8cc56436ed1599d9e9b3a7",
+      "sig": "f9a923c7c07b05d06510a1aeb7c844181ef93b17c9cdf059895140c8ad9601c39bbb90bbff7d57a3d1f2c5770aabef7a6f95580bb7c78acabd8386dd92f039a8"
+    }
+  }
+]

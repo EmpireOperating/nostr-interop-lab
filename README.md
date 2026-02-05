@@ -30,6 +30,19 @@ npm test
 npm run harness
 ```
 
+### Fixture exports
+
+Deterministic fixture JSON is checked in for cross-language consumption:
+- `fixtures/nip01.json`
+
+Regenerate:
+```bash
+npm -s run fixtures:nip01 > fixtures/nip01.json
+```
+
+Notes:
+- Fixture signatures are made deterministic by pinning BIP340 `auxRand` (derived from fixture name).
+
 ### NIP-01 (events + id + sig)
 
 This repo currently includes a small set of deterministic NIP-01 fixtures (kinds **0, 1, 7**) and verifies:

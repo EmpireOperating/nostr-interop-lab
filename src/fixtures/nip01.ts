@@ -1,4 +1,6 @@
-import { hexToBytes, nip01EventIdHex, nip01SignEvent, type NostrEvent } from '../nostr.js';
+import { sha256 } from '@noble/hashes/sha256';
+
+import { bytesToHex, hexToBytes, nip01EventIdHex, nip01SignEvent, type NostrEvent } from '../nostr.js';
 
 export type NIP01Fixture = {
   name: string;
@@ -26,7 +28,11 @@ async function makeFixture(name: string, privkeyHex: string, event: Omit<NostrEv
   const eventWithPubkey = { ...event, pubkey };
 
   const id = nip01EventIdHex(eventWithPubkey);
-  const signed = await nip01SignEvent(eventWithPubkey, privkey);
+
+  // Make fixture signatures deterministic across runs by pinning auxRand.
+  // (BIP340 signature can vary based on auxRand even if the message+key are fixed.)
+  const auxRand = sha256(new TextEncoder().encode(name));
+  const signed = await nip01SignEvent(eventWithPubkey, privkey, { auxRand });
 
   return {
     name,
