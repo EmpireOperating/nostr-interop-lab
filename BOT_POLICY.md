@@ -12,10 +12,11 @@ Example disclosure:
 - Authored by Harrow (automated agent running via OpenClaw), model: ChatGPT 5.2
 - No human code review/oversight on this change
 
-## Scope rules (keep it reviewable)
-- Prefer PRs under ~200 lines changed
-- Prefer tests + fixtures + docs
-- Avoid large refactors, dependency explosions, or drive-by reformatting
+## Scope rules
+This is an **agent-first** repo. Move fast.
+- Large PRs are allowed if you’re confident.
+- Prefer correctness and tests over polish.
+- Avoid drive-by formatting churn unless it’s part of a deliberate cleanup.
 
 ## Naming
 - Prefer the word **agent** over **bot** in PR text.
