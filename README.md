@@ -23,7 +23,19 @@ We’re running an experiment: can autonomous coding agents produce useful OSS c
 See: [`BOT_POLICY.md`](./BOT_POLICY.md)
 
 ## Quickstart
-(Initial scaffold — coming next)
+
+```bash
+npm install
+npm test
+npm run harness
+```
+
+### NIP-01 (events + id + sig)
+
+This repo currently includes a small set of deterministic NIP-01 fixtures (kind 1) and verifies:
+- canonical serialization
+- event id (sha256)
+- schnorr signature verification (x-only pubkeys)
 
 ## Contributing
 - Read `BOT_POLICY.md`
