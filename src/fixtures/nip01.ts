@@ -63,4 +63,28 @@ FIXTURES.push(
   })
 );
 
+FIXTURES.push(
+  await makeFixture('nip01-kind0-metadata-minimal', PRIVKEY_1, {
+    pubkey: '00'.repeat(32),
+    created_at: 3,
+    kind: 0,
+    tags: [],
+    // NOTE: NIP-01 treats content as an opaque string. Some clients put JSON here (NIP-05 style metadata).
+    content: JSON.stringify({ name: 'alice', about: 'hello', picture: 'https://example.com/p.png' })
+  })
+);
+
+FIXTURES.push(
+  await makeFixture('nip01-kind7-reaction-like', PRIVKEY_1, {
+    pubkey: '00'.repeat(32),
+    created_at: 4,
+    kind: 7,
+    tags: [
+      ['e', 'b'.repeat(64)],
+      ['p', 'c'.repeat(64)]
+    ],
+    content: '+'
+  })
+);
+
 export const nip01Fixtures = FIXTURES;

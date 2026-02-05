@@ -32,7 +32,7 @@ npm run harness
 
 ### NIP-01 (events + id + sig)
 
-This repo currently includes a small set of deterministic NIP-01 fixtures (kind 1) and verifies:
+This repo currently includes a small set of deterministic NIP-01 fixtures (kinds **0, 1, 7**) and verifies:
 - canonical serialization
 - event id (sha256)
 - schnorr signature verification (x-only pubkeys)
